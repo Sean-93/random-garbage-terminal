@@ -10,7 +10,6 @@ void initPrint()
 
     while (countdownNumber > 0)
     {
-        /* code */
         printf(" %d ", countdownNumber);
 
         Sleep(100);
