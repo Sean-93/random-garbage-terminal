@@ -166,12 +166,12 @@ void randomPhraseOutputLoop()
     int i = 1;
     while (i = 1)
     {
-        printf("%s", alphaStatement[rand() % 7]);
+        printf("%s", alphaStatement[rand() % 20]);
         printEllipsisAnimation();
         Sleep(1000);
-        printf("%s\n", betaStatement[rand() % 7]);
+        printf("%s\n", betaStatement[rand() % 20]);
         Sleep(200);
-        printf("%s\n", gammaStatement[rand() % 7]);
+        printf("%s\n", gammaStatement[rand() % 20]);
         Sleep(200);
         printFastLongLineOfDots();
     }
