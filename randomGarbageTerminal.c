@@ -2,11 +2,27 @@
 #include <stdlib.h>
 #include <windows.h>
 
+// PRINTS A LONG LINE OF SPACED UNDERSCORES
+
+void printLongLineOfUnderscores()
+{
+    int LongLineOfUnderscoresCount = 14;
+
+    for (int i = 0; i < LongLineOfUnderscoresCount; i++)
+    {
+        printf(" _ ");
+        Sleep(100);
+    }
+    printf(" _");
+}
+
 // PRINTS THE INIT COUNTDOWN
 
-void initPrint()
+void countdownPrint()
 {
     int countdownNumber = 3;
+
+    printf("\n\n");
 
     while (countdownNumber > 0)
     {
@@ -27,6 +43,8 @@ void initPrint()
 
         countdownNumber--;
     }
+
+    printf("\n");
 }
 
 // PRINTS ELLIPSIS ANIMATION
@@ -35,12 +53,12 @@ void printEllipsisAnimation()
 {
     int printEllipsisAnimationDotsCount = 2;
 
-    for (size_t i = 0; i < printEllipsisAnimationDotsCount; i++)
+    for (int i = 0; i < printEllipsisAnimationDotsCount; i++)
     {
         printf(".");
         Sleep(1000);
     }
-    printf(".\n");
+    printf(".\n\n");
     Sleep(400);
 }
 
@@ -50,20 +68,20 @@ void printFastLongLineOfDots()
 {
     int FastLongLineOfDotsCount = 24;
 
-    for (size_t i = 0; i < FastLongLineOfDotsCount; i++)
+    for (int i = 0; i < FastLongLineOfDotsCount; i++)
     {
         printf(".");
         Sleep(100);
     }
-    printf(".\n");
+    printf(".\n\n");
 }
 
-void main()
+// MAIN FUNCTIONALITY WHERE RANDOM ARRAYS OF PHRASES ARE STORED AND PRINTED
+
+void randomPhraseOutputLoop()
 {
 
-    // THESE ARE ALL MULTIPLE ARRAYS OF STRINGS TO PIECE TOGRTHER- THINK MADLIBS-STYLE
-
-#define NUMBER_OF_ALPHA_STATEMENTS 15
+#define NUMBER_OF_ALPHA_STATEMENTS 20
 #define ALPHA_STATEMENT_MAX_STRING_SIZE 40
 
     char alphaStatement[NUMBER_OF_ALPHA_STATEMENTS][ALPHA_STATEMENT_MAX_STRING_SIZE] =
@@ -82,10 +100,16 @@ void main()
             "sending report",
             "refactoring",
             "installing",
-            "booting to drive"};
+            "booting to drive",
+            "connecting to server",
+            "waiting for ip to resolve",
+            "serving utility packets",
+            "parsing database",
+            "booting connection"
+        };
 
-#define NUMBER_OF_BETA_STATEMENTS 15
-#define BETA_STATEMENT_MAX_STRING_SIZE 40
+#define NUMBER_OF_BETA_STATEMENTS 20
+#define BETA_STATEMENT_MAX_STRING_SIZE 100
 
     char betaStatement[NUMBER_OF_BETA_STATEMENTS][BETA_STATEMENT_MAX_STRING_SIZE] =
         {
@@ -104,10 +128,15 @@ void main()
             "calculating memory",
             "exiting The Wired",
             "cleaning unused disk space",
+            "fetching data with current port",
+            "dumping cache",
+            "extending library functionalities",
+            "updating utility libraries",
+            "sanitizing payloads",
         };
 
-#define NUMBER_OF_GAMMA_STATEMENTS 15
-#define GAMMA_STATEMENT_MAX_STRING_SIZE 255
+#define NUMBER_OF_GAMMA_STATEMENTS 20
+#define GAMMA_STATEMENT_MAX_STRING_SIZE 100
 
     char gammaStatement[NUMBER_OF_GAMMA_STATEMENTS][GAMMA_STATEMENT_MAX_STRING_SIZE] =
         {
@@ -126,10 +155,12 @@ void main()
             "derouting unused report assets",
             "mounting new drive",
             "unmounting drive",
+            "integrating data packet",
+            "parsing infomap",
+            "scraping XML sourcemap",
+            "sending update to essential utilities",
+            "upscaling data mapping",
         };
-
-    // PRINTS INITIAL STARTUP COUNTDOWN
-    initPrint();
 
     // INFINITE WHILE LOOP
     int i = 1;
@@ -144,4 +175,14 @@ void main()
         Sleep(200);
         printFastLongLineOfDots();
     }
+}
+
+void main()
+{
+    printLongLineOfUnderscores();
+    printf("\n\n\n\t<RANDOM GARBAGE TERMINAL>\n\n");
+    printLongLineOfUnderscores();
+    // PRINTS INITIAL STARTUP COUNTDOWN
+    countdownPrint();
+    randomPhraseOutputLoop();
 }
