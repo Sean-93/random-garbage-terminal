@@ -62,10 +62,12 @@ void printFastLongLineOfDots()
 void main()
 {
 
-#define NUMBER_OF_INIT_STATEMENTS 15
-#define INIT_STATEMENT_MAX_STRING_SIZE 40
+    // THESE ARE ALL MULTIPLE ARRAYS OF STRINGS TO PIECE TOGRTHER- THINK MADLIBS-STYLE
 
-    char initStatement[NUMBER_OF_INIT_STATEMENTS][INIT_STATEMENT_MAX_STRING_SIZE] =
+#define NUMBER_OF_ALPHA_STATEMENTS 15
+#define ALPHA_STATEMENT_MAX_STRING_SIZE 40
+
+    char alphaStatement[NUMBER_OF_ALPHA_STATEMENTS][ALPHA_STATEMENT_MAX_STRING_SIZE] =
         {
             "loading",
             "initializing",
@@ -83,10 +85,10 @@ void main()
             "installing",
             "booting to drive"};
 
-#define NUMBER_OF_CONTENT_STATEMENTS 14
-#define CONTENT_STATEMENT_MAX_STRING_SIZE 40
+#define NUMBER_OF_BETA_STATEMENTS 15
+#define BETA_STATEMENT_MAX_STRING_SIZE 40
 
-    char contentStatement[NUMBER_OF_CONTENT_STATEMENTS][CONTENT_STATEMENT_MAX_STRING_SIZE] =
+    char betaStatement[NUMBER_OF_BETA_STATEMENTS][BETA_STATEMENT_MAX_STRING_SIZE] =
         {
             "adding necessary drivers",
             "recognizing device",
@@ -102,25 +104,45 @@ void main()
             "unmounting driver",
             "calculating memory",
             "exiting The Wired",
+            "cleaning unused disk space",
         };
 
-    int i = 1;
+#define NUMBER_OF_GAMMA_STATEMENTS 15
+#define GAMMA_STATEMENT_MAX_STRING_SIZE 255
 
+    char gammaStatement[NUMBER_OF_GAMMA_STATEMENTS][GAMMA_STATEMENT_MAX_STRING_SIZE] =
+        {
+            "deleting excess memory load",
+            "writing to excess memory",
+            "allocating memory to drive",
+            "writing to currently mounted drive",
+            "deleting from currently mounted drive",
+            "editing report",
+            "compiling binary assets",
+            "loading secondary assets",
+            "deleting unused assets",
+            "adding memory to the currently mounted drive",
+            "deleting unused binary assets",
+            "routing report to external drive",
+            "derouting unused report assets",
+            "mounting new drive",
+            "unmounting drive",
+        };
+
+    // PRINTS INITIAL STARTUP COUNTDOWN
+    initPrint();
+
+    // INFINITE WHILE LOOP
+    int i = 1;
     while (i = 1)
     {
-        initPrint();
-        for (int i = 0; i < i + 1; i++)
-        {
-            printf("%s", initStatement[rand() % 7]);
-            printEllipsisAnimation();
-            Sleep(1000);
-            printf("%s\n", contentStatement[rand() % 7]);
-            Sleep(200);
-            printf("%s\n", contentStatement[rand() % 7]);
-            Sleep(200);
-            printf("%s\n", contentStatement[rand() % 7]);
-            Sleep(200);
-            printFastLongLineOfDots();
-        }
+        printf("%s", alphaStatement[rand() % 7]);
+        printEllipsisAnimation();
+        Sleep(1000);
+        printf("%s\n", betaStatement[rand() % 7]);
+        Sleep(200);
+        printf("%s\n", gammaStatement[rand() % 7]);
+        Sleep(200);
+        printFastLongLineOfDots();
     }
 }
